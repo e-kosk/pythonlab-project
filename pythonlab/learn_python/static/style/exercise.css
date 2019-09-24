@@ -1,0 +1,18 @@
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+div#exercise {
+    width: 50%;;
+    background-color: red;
+    float: left;
+    color: white;
+}
+
+div#form {
+    width: 50%;
+    background-color: green;
+    float: right;
+}
+
