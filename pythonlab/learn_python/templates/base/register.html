@@ -13,16 +13,13 @@
             Witaj!
         </h1>
         <p class="hello">
-            Zaloguj się do swojego konta, aby móc korzystać z PythonLaba!.
+            Załóż konto, aby móc korzystać z PythonLaba!
         </p>
         <form method="post" novalidate>
             {% csrf_token %}
-            {{ login_form }}
-            <input type="submit" value="zaloguj" id="login">
+            {{ register_form }}
+            <input type="submit" value="zarejestruj" id="login">
         </form>
-        <p class="hello">
-            Nie masz jeszcze konta? <a href="/register">Zarejestruj się!</a>
-        </p>
     </div>
 </body>
 </html>

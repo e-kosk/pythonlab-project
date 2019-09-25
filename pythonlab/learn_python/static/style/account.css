@@ -1,0 +1,24 @@
+table {
+    font-family: Manrope-regular, serif;
+    font-size: 20px;
+    color: white;
+}
+
+table.user-profile tr td {
+    padding: 10px 50px;
+}
+
+table.user-profile {
+    margin-top: 30px;
+}
+
+div#user-profile {
+    width: 100%;
+    background-color: #747474;
+}
+
+h1.username {
+    display: block;
+    text-align: center;
+    width: 100%;
+}

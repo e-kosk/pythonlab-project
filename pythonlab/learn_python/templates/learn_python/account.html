@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div id="user-profile">
+    <h1 class="username">{{ request.user.username }}</h1>
+    <table class="user-profile">
+        <tr>
+            <td>Imię</td>
+            <td>{{ request.user.first_name }}</td>
+        </tr>
+        <tr>
+            <td>Nazwisko</td>
+            <td>{{ request.user.last_name }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ request.user.email }}</td>
+        </tr>
+        <tr>
+            <td>Punkty</td>
+            <td>{{ user_points }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

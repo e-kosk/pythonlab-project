@@ -5,7 +5,18 @@
     <h1>{{ exercise.title }}</h1>
     <p class="description">{{ exercise.description }}</p>
 </div>
+
 <div id="form">
+    {% if wrong_code %}
+        <p class="instruction wrong_code">
+            Twój kod nie uzyskał pozytywnego wyniku w testach. Spróbuj ponownie.<br>
+            HINT: jako wcięcia używaj 2 spacji.
+        </p>
+    {% else %}
+        <p class="instruction">
+            Poniżej zapisz swój kod. Gdy skończysz naciśnij "SPRAWDŹ".
+        </p>
+    {% endif %}
     <form method="post">
         {% csrf_token %}
         {{ form }}

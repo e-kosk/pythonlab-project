@@ -1,18 +1,78 @@
 h1 {
-    margin: 0;
-    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #f7b820;
+    font-family: Arial, serif;
+    font-size: 80px;
+}
+
+p.description, p.instruction {
+    margin-top: 50px;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, serif;
 }
 
 div#exercise {
-    width: 50%;;
-    background-color: red;
+    width: 47%;
+    /*background-color: red;*/
     float: left;
     color: white;
 }
 
+li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+p.x {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    font-family: Arial, serif;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+
+
 div#form {
-    width: 50%;
-    background-color: green;
+    width: 47%;
+    /*background-color: green;*/
     float: right;
 }
 
+textarea {
+    display: block;
+    width: 95%;
+    min-height: 300px;
+    margin: auto;
+    /*padding: 20px;*/
+    background-color: #303030;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+label {
+    display: inline;
+    color: white;
+    margin-left: 2.5%;
+}
+
+input[type=submit] {
+    display: block;
+    width: 95%;
+    margin: 20px auto auto auto;
+    background-color: white;
+}
+
+input[type=submit]:hover {
+    background-color: #a0ff98;
+}

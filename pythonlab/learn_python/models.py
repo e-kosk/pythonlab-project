@@ -26,4 +26,3 @@ class Points(models.Model):
 
     class Meta:
         unique_together = ['user', 'exercise']
-

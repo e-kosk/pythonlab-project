@@ -1,6 +1,16 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
-hello
-
+<h1 class="home-hello">Witaj {{ request.user.username }}!</h1>
+<p class="hello-text">
+    Rozwiązuj kolejne zadania i awansuj w rankingu!
+</p>
+<div id="links">
+    <a href="/ranking">
+        ranking
+    </a>
+    <a href="/account">
+        mój profil
+    </a>
+</div>
 {% endblock %}

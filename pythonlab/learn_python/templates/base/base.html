@@ -10,6 +10,8 @@
     <title>Python Lab</title>
     <link rel="stylesheet" href="{% static 'style/base.css' %}">
     <link rel="stylesheet" href="{% static 'style/exercise.css' %}">
+    <link rel="stylesheet" href="{% static 'style/account.css' %}">
+    <link rel="stylesheet" href="{% static 'style/add_exercise.css' %}">
     <script src="{% static 'js/jQuery.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
 </head>
@@ -19,9 +21,9 @@
     <div id="box">
 
         <div id="top-bar">
-            <p>pythonlab</p>
+            <p><a href="/" class="pythonlab">pythonlab</a></p>
             <ul class="menu">
-                <li><a href="{% url 'exercises' %}" class="exercises">zadania</a></li>
+                <li><a class="exercises">zadania</a></li>
                 <li><a href="{% url 'account' %}">konto</a></li>
                 <li><a href="{% url 'logout' %}">wyloguj</a></li>
             </ul>
@@ -31,7 +33,7 @@
             {% block content %}
                 <h1>Witaj {{ request.user.first_name }}!</h1>
                 <p class="hello-text">
-                    tutaj tekst powitalny
+                    Rozwiązuj kolejne zadania i awansuj w rankingu!
                 </p>
             {% endblock %}
         </div>
@@ -43,10 +45,10 @@
     </div>
 
     <div id="exercises">
-        <p class="x">UKRYJ</p>
+        <p class="x">X</p>
         <ul class="exercises-list">
             {% for exercise in exercises %}
-            <li><a href="/exercise/{{ exercise.id }}">{{ exercise.id }} {{ exercise.title }}</a></li>
+            <li><a href="/exercise/{{ exercise.id }}">{{ exercise.id }}. {{ exercise.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
