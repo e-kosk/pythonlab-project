@@ -1,24 +1,25 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
-<div id="success">
-    <h1>Brawo!</h1>
-    <p class="description">Ukończyłeś zadanie nr {{ exercise.id }} - "{{ exercise.title }}" z wynikiem</p>
-    <h2>{{ user_score }}/{{ max_score }} punktów</h2>
-</div>
+<div id="success-box">
+    <div id="success">
+        <h1>Brawo!</h1>
+        <p class="description">Ukończyłeś zadanie nr {{ exercise.id }} - "{{ exercise.title }}" z wynikiem</p>
+        <h2>{{ user_score }}/{{ max_score }} punktów</h2>
+    </div>
 
-<div id="points_decision">
-    {% if already_done %}
+    <div id="points_decision">
+        {% if already_done %}
         Już rozwiązywałeś to zadanie. Punkty zostały zastąpione nowym wynikiem.
-    {% else %}
+        {% else %}
         Punkty zostały dodane do twojego konta.
-    {% endif %}
+        {% endif %}
 
+    </div>
+
+    <div id="next">
+        <p><a href="/exercise/{{ next_id }}/">Następne zadanie</a></p>
+    </div>
 </div>
-
-<div id="next">
-    <p><a href="/exercise/{{ next_id }}">Następne zadanie</a></p>
-</div>
-
 
 {% endblock %}

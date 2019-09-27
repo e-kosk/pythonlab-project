@@ -12,7 +12,8 @@ p.description, p.instruction {
     margin-top: 50px;
     padding: 5px;
     text-align: center;
-    font-family: Arial, serif;
+    font-family: Manrope-regular, serif;
+    font-size: 20px;
 }
 
 div#exercise {
@@ -50,14 +51,73 @@ div#form {
 
 textarea {
     display: block;
-    width: 95%;
+    width: 88%;
     min-height: 300px;
     margin: auto;
     /*padding: 20px;*/
     background-color: #303030;
     color: white;
-    border: none;
-    padding: 5px;
+    border: 2px solid grey;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.rainbow {
+    background: linear-gradient(100deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: rainbow 1s ease infinite;
+    -z-animation: rainbow 1s ease rotate(360deg);
+    -o-animation: rainbow 1s ease infinite;
+    animation: rainbow 1s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-moz-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-o-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 label {

@@ -40,10 +40,10 @@ div#top-bar {
     vertical-align: middle;
     line-height: 50px;
     text-transform: uppercase;
-    color:white
+    color: white
 }
 
-div#top-bar p, ul.menu, ul.menu li {
+div#top-bar > p, ul.menu, ul.menu > li {
     display: inline;
     margin: 0;
     padding: 0;
@@ -68,6 +68,12 @@ ul.menu {
     margin-right: 20px;
 }
 
+p.username-info {
+    font-family: Manrope-regular, serif;
+    color: white;
+    text-transform: none;
+}
+
 div#exercises {
     position: relative;
     display: none;
@@ -77,8 +83,9 @@ div#exercises {
 }
 
 div#content {
-    background-color: grey;
+    background-color: #3f3f3f;
     min-height: 500px;
+    height: 87%;
 }
 
 div#footer {
@@ -93,7 +100,7 @@ div#footer {
     color: white;
 }
 
-div#links > *{
+div#links > * {
     margin: 10%;
 }
 
@@ -106,7 +113,7 @@ p.hello-text {
     font-family: Manrope-bold, serif;
     font-size: 1.5em;
     color: white;
-    margin: 10%;
+    margin: 50px;
 }
 
 h1.home-hello {
@@ -115,4 +122,9 @@ h1.home-hello {
 
 a.pythonlab {
     background-color: #f6b820;
+    margin-left: 30px;
+}
+
+a:hover {
+    box-shadow: 0 0 5px white;
 }

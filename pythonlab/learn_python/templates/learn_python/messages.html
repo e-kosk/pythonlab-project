@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<h1>wiadomości</h1>
+
+
+<div class="messages">
+    <a href="/messages/new/" class="new-message">nowa</a>
+    {% for message in messages %}
+    <a href="/messages/{{ message.id }}/" class="clean">
+        <div class="message">
+            <div class="from_user">
+                {{ message.get_title }}
+            </div>
+            <div class="message-text">
+                {{ message.get_short_text }}
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+div#success-box *:not(h1) {
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    color: white;
+    font-family: Manrope-light, serif;
+}
+
+div#success-box a {
+    color: black;
+}

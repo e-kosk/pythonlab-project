@@ -1,0 +1,42 @@
+@font-face {
+    font-family: Manrope-light;
+    src: local('Manrope'), url("/static/fonts/manrope-light.otf");
+}
+
+@font-face {
+    font-family: Manrope-bold;
+    src: local('Manrope'), url("/static/fonts/manrope-bold.otf");
+}
+
+ol.ranking {
+    list-style-type: upper-roman;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+ol.ranking table {
+    font-family: Manrope-regular, serif;
+}
+
+ol.ranking li {
+    margin-top: 50px;
+}
+
+td.points {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    color: red;
+    font-family: Manrope-bold, serif;
+}
+
+ol.ranking tr:nth-child(1) td:nth-child(1) {
+    font-size: 30px;
+    color: #f6b820;
+    width: 200px;
+}
+
+ol.ranking tr:nth-child(2) td:nth-child(1) {
+    font-size: 17px;
+    width: 200px;
+}

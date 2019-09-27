@@ -26,3 +26,18 @@ class Points(models.Model):
 
     class Meta:
         unique_together = ['user', 'exercise']
+
+
+class Message(models.Model):
+    from_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent', verbose_name='od')
+    to_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received', verbose_name='do')
+    title = models.CharField(max_length=64, verbose_name='tytuł', null=True)
+    text = models.TextField(verbose_name='treść')
+    date = models.DateTimeField(auto_now=True, verbose_name='data')
+
+    def get_short_text(self):
+        return self.text[:40]
+
+    def get_title(self):
+        return self.title if self.title else '<brak tytułu>'
+

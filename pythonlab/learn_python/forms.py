@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 
+from learn_python.models import Message
+
 
 class LoginForm(forms.Form):
     login = forms.CharField()
@@ -12,13 +14,14 @@ class ExerciseForm(forms.Form):
 
 
 class RegisterForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput, label='hasło')
     class Meta:
         model = User
         fields = ('username', 'password', 'first_name', 'last_name', 'email')
 
 
-class AddExerciseForm(forms.Form):
-    title = forms.CharField(max_length=64, label='tytuł')
-    description = forms.CharField(widget=forms.Textarea, label='opis')
-    award_points = forms.IntegerField(min_value=10, max_value=100, label='punkty')
-    code = forms.CharField(widget=forms.Textarea, label='kod')
+class NewMessageForm(forms.ModelForm):
+
+    class Meta:
+        model = Message
+        fields = ('to_user', 'title', 'text')

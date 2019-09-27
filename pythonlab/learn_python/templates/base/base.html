@@ -3,17 +3,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% if not user.is_authenticated %}
-    <meta http-equiv="refresh" content="0; url=login">
-    {% endif %}
+<!--    {% if not user.is_authenticated %}-->
+<!--    <meta http-equiv="refresh" content="0; url=login">-->
+<!--    {% endif %}-->
     <meta charset="UTF-8">
     <title>Python Lab</title>
     <link rel="stylesheet" href="{% static 'style/base.css' %}">
     <link rel="stylesheet" href="{% static 'style/exercise.css' %}">
     <link rel="stylesheet" href="{% static 'style/account.css' %}">
-    <link rel="stylesheet" href="{% static 'style/add_exercise.css' %}">
+    <link rel="stylesheet" href="{% static 'style/ranking.css' %}">
+    <link rel="stylesheet" href="{% static 'style/messages.css' %}">
+    <link rel="stylesheet" href="{% static 'style/new_message.css' %}">
+    <link rel="stylesheet" href="{% static 'style/success.css' %}">
     <script src="{% static 'js/jQuery.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/account.js' %}"></script>
+    <script src="{% static 'js/exercise.js' %}"></script>
 </head>
 <body>
 
@@ -22,9 +27,12 @@
 
         <div id="top-bar">
             <p><a href="/" class="pythonlab">pythonlab</a></p>
+            <p class="username-info">({{ request.user.username }})</p>
             <ul class="menu">
                 <li><a class="exercises">zadania</a></li>
+                <li><a href="{% url 'ranking' %}">ranking</a></li>
                 <li><a href="{% url 'account' %}">konto</a></li>
+                <li><a href="{% url 'messages' %}">wiadomości</a></li>
                 <li><a href="{% url 'logout' %}">wyloguj</a></li>
             </ul>
         </div>
@@ -48,7 +56,7 @@
         <p class="x">X</p>
         <ul class="exercises-list">
             {% for exercise in exercises %}
-            <li><a href="/exercise/{{ exercise.id }}">{{ exercise.id }}. {{ exercise.title }}</a></li>
+            <li><a href="/exercise/{{ exercise.id }}/">{{ exercise.id }}. {{ exercise.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

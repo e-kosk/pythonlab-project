@@ -2,23 +2,27 @@
 {% block content %}
 <div id="user-profile">
     <h1 class="username">{{ request.user.username }}</h1>
-    <table class="user-profile">
-        <tr>
-            <td>Imię</td>
-            <td>{{ request.user.first_name }}</td>
-        </tr>
-        <tr>
-            <td>Nazwisko</td>
-            <td>{{ request.user.last_name }}</td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>{{ request.user.email }}</td>
-        </tr>
-        <tr>
-            <td>Punkty</td>
-            <td>{{ user_points }}</td>
-        </tr>
-    </table>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="edytuj" class="accept" data-edited="false">
+        <table class="user-profile">
+            <tr>
+                <td>Imię</td>
+                <td><input name="first_name" type="text" value="{{ request.user.first_name }}" readonly></td>
+            </tr>
+            <tr>
+                <td>Nazwisko</td>
+                <td><input name="last_name" type="text" value="{{ request.user.last_name }}" readonly></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input name="email" type="email" value="{{ request.user.email }}" readonly></td>
+            </tr>
+            <tr>
+                <td>Punkty</td>
+                <td class="no-edit">{{ user_points }}</td>
+            </tr>
+        </table>
+    </form>
 </div>
 {% endblock %}

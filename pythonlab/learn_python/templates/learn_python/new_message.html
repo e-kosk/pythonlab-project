@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<h1>nowa wiadomość</h1>
+
+<div id="new_message">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="wyślij">
+    </form>
+</div>
+
+{% endblock %}

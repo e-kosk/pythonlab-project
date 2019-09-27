@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<ol class="ranking">
+    {% for user_tuple in users_tuple %}
+    <li>
+        <table>
+            <tr>
+                <td>{{ user_tuple.0.username }}</td>
+                <td rowspan="2" class="points">{{ user_tuple.1 }}</td>
+            </tr>
+            <tr>
+                <td>{{ user_tuple.0.first_name }} {{ user_tuple.0.last_name }}</td>
+            </tr>
+        </table>
+    </li>
+    {% endfor %}
+</ol>
+
+{% endblock %}

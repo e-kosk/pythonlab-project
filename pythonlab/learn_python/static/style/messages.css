@@ -1,0 +1,56 @@
+@font-face {
+    font-family: Manrope-light;
+    src: local('Manrope'), url("/static/fonts/manrope-light.otf");
+}
+
+@font-face {
+    font-family: Manrope-bold;
+    src: local('Manrope'), url("/static/fonts/manrope-bold.otf");
+}
+
+.clean {
+    all: unset;
+}
+
+a.new-message {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 30px;
+    border-radius: 20px;
+}
+
+div.messages{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+
+div.message {
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+    /*padding: 15px;*/
+}
+
+div.message:hover {
+    box-shadow: 0 0 5px white;
+}
+
+div.from_user {
+    background-color: #333;
+    color: #f6b820;
+    font-family: Manrope-bold, serif;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+div.message-text {
+    background-color: white;
+    color: black;
+    font-family: Manrope-light, serif;
+    padding: 15px;
+    border-radius: 15px;
+}
+
