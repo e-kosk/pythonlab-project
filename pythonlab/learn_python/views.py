@@ -2,7 +2,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.shortcuts import render, redirect
+from django.http import Http404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views import View
 
@@ -81,7 +82,10 @@ class RegisterView(View):
 class ExerciseView(View):
     @method_decorator(login_required)
     def get(self, request, exercise_id):
-        exercise = Exercise.objects.get(pk=exercise_id)
+        try:
+            exercise = get_object_or_404(Exercise, pk=exercise_id)
+        except Http404:
+            return redirect('/404/')
         form = ExerciseForm()
         context = {
             'form': form,
@@ -167,7 +171,7 @@ class AccountView(View):
 
 
 class RankingView(View):
-
+    @method_decorator(login_required)
     def get(self, request):
         users = User.objects.all()
 
@@ -226,14 +230,14 @@ class NewMessageView(View):
 class MessageView(View):
     @method_decorator(login_required)
     def get(self, request, message_id):
-        message = Message.objects.get(pk=message_id)
+        try:
+            message = get_object_or_404(Message, pk=message_id)
+        except Http404:
+            return redirect('/404/')
         context = {
             'message': message,
         }
         return render(request, 'learn_python/message.html', context)
-
-
-# TODO
 
 
 class NotFoundView(View):
